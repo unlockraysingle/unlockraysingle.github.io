@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redeem Your Code</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 15px;
+            color: #fff;
+            background: #007bff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .success {
+            color: green;
+            margin-top: 15px;
+        }
+        .error {
+            color: red;
+            margin-top: 15px;
+        }
+        .download {
+            margin-top: 20px;
+        }
+        .download a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .download a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Redeem Your Code</h1>
+        <p>Enter your code below to download the latest single.</p>
+        <form id="redeemForm">
+            <input type="text" id="codeInput" placeholder="Enter your code" required>
+            <button type="submit">Redeem</button>
+        </form>
+        <div id="message"></div>
+        <div class="download" id="downloadSection" style="display: none;">
+            <p>Your code is valid! Click below to download the single:</p>
+            <a href="Aurora_Borealis_normal.mp3" download>Download MP3</a>
+        </div>
+    </div>
+
+    <script>
+        const validCodes = ["SINGLE2024", "MUSICLOVER", "REDEEM123"];
+
+        document.getElementById('redeemForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const codeInput = document.getElementById('codeInput').value.trim();
+            const messageDiv = document.getElementById('message');
+            const downloadSection = document.getElementById('downloadSection');
+
+            if (validCodes.includes(codeInput)) {
+                messageDiv.innerHTML = '<p class="success">Code redeemed successfully!</p>';
+                downloadSection.style.display = 'block';
+            } else {
+                messageDiv.innerHTML = '<p class="error">Invalid code. Please try again.</p>';
+                downloadSection.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
