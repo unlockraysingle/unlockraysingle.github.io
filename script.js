@@ -1,4 +1,4 @@
-const validCodes = ["SWJR4S", "OFDDYE", "EUKJ27", "EFNYBK", "C2MTUF", "9N9VD0", "QL4DZJ", "EME8FT", "VFLSFO", "DUZ97U",];
+const validCodes = ["SWJR4S", "OFDDYE", "EUKJ27", "EFNYBK", "C2MTUF", "9N9VD0", "QL4DZJ", "EME8FT", "VFLSFO", "DUZ97U"];
 const redeemedCodesKey = "redeemedCodes"; // Key to store redeemed codes in localStorage
 
 document.getElementById('redeemForm').addEventListener('submit', function(event) {
