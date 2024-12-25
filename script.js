@@ -6,6 +6,8 @@ document.getElementById('redeemForm').addEventListener('submit', function(event)
     const codeInput = document.getElementById('codeInput').value.trim();
     const messageDiv = document.getElementById('message');
     const downloadSection = document.getElementById('downloadSection');
+    const downloadLink = document.getElementById('downloadLink');
+    const singleCover = document.getElementById('singleCover');
 
     // Retrieve redeemed codes from localStorage
     const redeemedCodes = JSON.parse(localStorage.getItem(redeemedCodesKey)) || [];
@@ -20,9 +22,11 @@ document.getElementById('redeemForm').addEventListener('submit', function(event)
         localStorage.setItem(redeemedCodesKey, JSON.stringify(redeemedCodes));
         messageDiv.innerHTML = '<p class="success">Code redeemed successfully!</p>';
         downloadSection.style.display = 'block';
+        singleCover.style.display = 'block';
     } else {
         // If the code is invalid
         messageDiv.innerHTML = '<p class="error">Invalid code. Please try again.</p>';
         downloadSection.style.display = 'none';
+        singleCover.style.display = 'none';
     }
 });
