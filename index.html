@@ -62,21 +62,22 @@ p.error {
 <body>
     <div class="container">
         <h1>Redeem Your Code</h1>
-        <p>Enter your code below to download the latest single.</p>
+        <p>Enter your code below to download the latest singles.</p>
         <form id="redeemForm">
             <input type="text" id="codeInput" placeholder="Enter your code" required>
             <button type="submit">Redeem</button>
         </form>
         <div id="message"></div>
         <div class="download" id="downloadSection" style="display: none;">
-            <p>Your code is valid! Click below to download the single:</p>
-            <a href="Aurora_Borealis_normal.mp3" download id="downloadLink">Download MP3</a>
+            <p>Your code is valid! Click below to download the singles:</p>
+            <a href="Ray - EXTCY.mp3" download id="downloadLink1">Download Here</a><br>
+            <a href="Ray - EXTCY (Live Version).mp3" download id="downloadLink2">Download Live Version Here</a>
             <img id="singleCover" src="Extcy.jpg" alt="Single Cover" class="cover-animation" style="display: none;">
         </div>
     </div>
 
     <script>
-        const validCodes = ["SWJR4S", "OFDDYE", "EUKJ27", "C2MTUF", "VFLSFO", "KUD8HQ", "YN6EGG", "AIDQPO", "L0RINI", "3RA6VF"];
+        const validCodes = ["EME8FT", "4FNYBK", "OFD3Y4", "EUKJ27", "DUZ97U", "QL4DZJ", "9N9VD0", "C2MTUF", "VFL8F0", "HLYN6N", "M6MOUU", "G5NU5O", "J86GVU", "KUD8HQ", "0MW7QE", "WVQV0L", "MQ9JNO", "YN6EGG", "DQ5FAW", "BFBJY1", "L4G4JJ", "3RA6VF", "A1DQP0", "L0RIN1", "PGWQ0O", "7BFPEW", "1ALN6I", "5TPUHY", "R1AN49", "676OTA", "NG1BE3", "MQMQ30", "LB3B8I", "QZCBN9", "ANG5O9", "SWJR4S"];
 const redeemedCodesKey = "redeemedCodes"; // Key to store redeemed codes in localStorage
 
 document.getElementById('redeemForm').addEventListener('submit', function(event) {
@@ -98,7 +99,7 @@ document.getElementById('redeemForm').addEventListener('submit', function(event)
         // If the code is valid and not redeemed yet
         redeemedCodes.push(codeInput);
         localStorage.setItem(redeemedCodesKey, JSON.stringify(redeemedCodes));
-        messageDiv.innerHTML = '<p class="success">Code redeemed successfully!</p>';
+        messageDiv.innerHTML = '<p class="success">Code redeemed successfully! Thank you for supporting my music</p>';
         downloadSection.style.display = 'block';
         singleCover.style.display = 'block';
     } else {

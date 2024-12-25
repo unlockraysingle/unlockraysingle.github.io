@@ -20,7 +20,7 @@ document.getElementById('redeemForm').addEventListener('submit', function(event)
         // If the code is valid and not redeemed yet
         redeemedCodes.push(codeInput);
         localStorage.setItem(redeemedCodesKey, JSON.stringify(redeemedCodes));
-        messageDiv.innerHTML = '<p class="success">Code redeemed successfully!</p>';
+        messageDiv.innerHTML = '<p class="success">Code redeemed successfully! Thank you for supporting my music</p>';
         downloadSection.style.display = 'block';
         singleCover.style.display = 'block';
     } else {
