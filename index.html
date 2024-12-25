@@ -47,6 +47,16 @@ p.success {
 p.error {
     color: red;
 }
+@keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .cover-animation {
+            animation: fadeIn 1s ease-in-out;
+            max-width: 100%;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -60,7 +70,8 @@ p.error {
         <div id="message"></div>
         <div class="download" id="downloadSection" style="display: none;">
             <p>Your code is valid! Click below to download the single:</p>
-            <a href="Aurora_Borealis_normal.mp3" download>Download MP3</a>
+            <a href="Aurora_Borealis_normal.mp3" download id="downloadLink">Download MP3</a>
+            <img id="singleCover" src="Extcy.jpg" alt="Single Cover" class="cover-animation" style="display: none;">
         </div>
     </div>
 
